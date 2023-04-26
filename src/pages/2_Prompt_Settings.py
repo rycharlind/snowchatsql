@@ -17,7 +17,11 @@ prompt = st.text_area("Prompt Template", key=CState.CHAT_PROMPT_TEMPLATE)
 
 generate = st.button("Generate Prompt Template")
 
-if (generate):
+def generate_schema_prompt():
     tables = snowflake.get_tables()
     schemas = list(map(lambda table: snowflake.get_table_schema(table), tables))
-    st.write(schemas)
+    out = prompt_builder.build_from_table_schemas(schemas)
+    st.write(out)
+
+if (generate):
+    generate_schema_prompt()

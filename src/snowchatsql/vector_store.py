@@ -6,7 +6,7 @@ class VectorStore():
     def __init__(self, config: Config) -> None:
         self.chroma_client = chromadb.Client(Settings(
             chroma_db_impl="duckdb+parquet",
-            persist_directory="/Users/ryanlindbeck/Development/snowchatsql/data"
+            persist_directory=config.chroma.db_dir
         ))
 
     def persist_database_schema(self, database: str, schema: str) -> None:

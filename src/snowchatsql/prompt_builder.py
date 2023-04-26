@@ -11,7 +11,8 @@ class PromptBuilder():
 """
 
     def build_from_table_schemas(self, schemas: list) -> str:
-        return ""
+        out = "\n".join(list(map(lambda schema: schema, schemas)))
+        return f"{out}"
     
     def get_schema_prompt(self, table: str, schema: list) -> str:
         return f"{table} ({', '.join(list(map(lambda column: self.get_schema_line(column), schema)))})))"
