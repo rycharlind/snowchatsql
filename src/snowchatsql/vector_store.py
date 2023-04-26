@@ -1,14 +1,17 @@
 import chromadb
 from chromadb.config import Settings
 from snowchatsql.config.config import Config
+import os
 
 class VectorStore():
     def __init__(self, config: Config) -> None:
+        project_root = os.path.dirname(os.path.abspath(__file__))
         self.chroma_client = chromadb.Client(Settings(
             chroma_db_impl="duckdb+parquet",
-            persist_directory=config.chroma.db_dir
+            persist_directory=os.path.join(project_root, "chroma_db_data") # todo: This is temp. Will eventually move to cloud storage.
         ))
 
+    # Returns a list of documents that match the prompt.
     def search(self, collection_name: str, prompt: str, n_results: int = 5):
         collection = self.chroma_client.get_collection(name=collection_name)
         result = collection.query(

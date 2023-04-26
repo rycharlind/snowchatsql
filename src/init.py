@@ -1,3 +1,5 @@
+# Initialize the database schema and persist it to the vector store.
+
 from snowchatsql.config.config import Config
 from snowchatsql.snowflake import Snowflake
 from snowchatsql.vector_store import VectorStore

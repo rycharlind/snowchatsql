@@ -12,6 +12,11 @@ A Streamlit app that allows users to analyze data in a Snowflake data warehouse 
 - `poetry env use 3.8.16` - Make sure poetry uses the correct Python version.
 - `poetry install` - This will install all the dependencies in the `pyproject.toml` file.
 
+Note: This project uses Poetry for local development. However Streamlit requires a `requirements.txt` file for deployment. 
+Use the following command to generate the `requirements.txt` file from Poetry.
+
+`poetry export --without-hashes --format=requirements.txt > requirements.txt`
+
 ## Configure Python Interpreter in VSCode:
 - `CMD + SHIFT + P` -> `Python: Select Interpreter` -> Select the `Python 3.8.16 ('.venv': poetry)` option.
 
