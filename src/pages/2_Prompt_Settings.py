@@ -19,7 +19,7 @@ generate = st.button("Generate Prompt Template")
 
 def generate_schema_prompt():
     tables = snowflake.get_tables()
-    schemas = list(map(lambda table: snowflake.get_table_schema(table), tables))
+    schemas = list(map(lambda table: snowflake.get_table_fields(table), tables))
     out = prompt_builder.build_from_table_schemas(schemas)
     st.write(out)
 

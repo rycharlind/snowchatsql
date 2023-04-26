@@ -1,4 +1,4 @@
-from snowflake.snowpark import Session
+from snowflake.snowpark import Session, DataFrame
 from snowchatsql.config.config import Config
 
 class Snowflake():
@@ -22,6 +22,9 @@ class Snowflake():
         tables = self.session.sql(f"SHOW TABLES").collect()
         return list(map(lambda table: table.name, tables))
     
-    def get_table_schema(self, table: str) -> list:
+    def get_table_fields(self, table: str) -> list:
         schema = self.session.sql(f"DESCRIBE TABLE {table}").collect()
-        return list(map(lambda column: {'name': column.name, 'type': column.type}, schema))
+        return list(map(lambda field: {'name': field.name, 'type': field.type}, schema))
+    
+    def sql(self, query: str) -> DataFrame:
+        return self.session.sql(query)
