@@ -4,12 +4,13 @@ A Streamlit app that allows users to analyze data in a Snowflake data warehouse 
 
 ## Overview
 This app is a POC on the ability to analyze any dataset that is stored in a Snowflake database using AI and natural language. 
-I used a free same dataset from the Snowflake Marketplace on Amazon Vendor Analytics.  See below.
+I used a free sample dataset from the Snowflake Marketplace on ***Amazon Vendor Analytics***.
 
-### Snowflake Sample Dataset: 
+
+### Snowflake Sample Dataset: ***Amazon Vendor Analytics***
 https://app.snowflake.com/marketplace/listing/GZTYZ3HT1R1/reason-automation-amazon-vendor-analytics-sample-dataset
 
-## Stack
+## Tech Stack
 - [Streamlit](https://streamlit.io/) - Python Data App framework
 - [Snowflake](https://www.snowflake.com/) - Data Warehouse
 - [ChromaDB](https://www.trychroma.com/) - Vector Store
