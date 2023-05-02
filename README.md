@@ -2,11 +2,18 @@
 
 A Streamlit app that allows users to analyze data in a Snowflake data warehouse using natural language. 
 
+## Overview
+This app is a POC on the ability to analyze any dataset that is stored in a Snowflake database using AI and natural language. 
+I used a free same dataset from the Snowflake Marketplace on Amazon Vendor Analytics.  See below.
+
+### Snowflake Sample Dataset: 
+https://app.snowflake.com/marketplace/listing/GZTYZ3HT1R1/reason-automation-amazon-vendor-analytics-sample-dataset
+
 ## Stack
-- Streamlit - Python Data App framework
-- Snowflake - Data Warehouse
-- ChromaDB - Vector Store
-- OpenAI (GPT4) - Large Language Model (LLM)
+- [Streamlit](https://streamlit.io/) - Python Data App framework
+- [Snowflake](https://www.snowflake.com/) - Data Warehouse
+- [ChromaDB](https://www.trychroma.com/) - Vector Store
+- [OpenAI](https://openai.com/) (text-davinci-003) - Large Language Model (LLM)
 
 ## Install Dependencies
 - `poetry env use 3.8.16` - Make sure poetry uses the correct Python version.
@@ -24,7 +31,7 @@ Use the following command to generate the `requirements.txt` file from Poetry.
 - `streamlit run src/Home.py`
 - From VS Code, see the `launch.json` file.
 
-## Env variables for Snowflake connection:
+## Env variables:
 ```bash
 # OpenAI
 OPENAI_API_KEY=""

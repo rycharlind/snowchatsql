@@ -1,0 +1,5 @@
+What is the total number of orders placed on Amazon.com?
+What is the total number of orders that have been confirmed?
+What is the total number of orders that have been shipped?
+What is the total number of payments made to vendors?
+What is the total number of views, sales, units, and orders for each store?

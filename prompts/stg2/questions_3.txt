@@ -1,0 +1,5 @@
+What is the total spend across all campaigns?
+What is the total impressions across all campaigns?
+What is the total clicks across all campaigns?
+What is the total cost per click across all campaigns?
+What is the total return on advertising spend across all campaigns?

@@ -1,0 +1,5 @@
+What is the total number of orders placed across all stores?
+What is the total revenue generated across all stores?
+What is the average number of orders per customer?
+What is the average revenue per customer?
+What is the total percentage of repeat customers across all stores?

@@ -23,6 +23,7 @@ if CState.CHAT_PAST not in st.session_state:
 if CState.RESULT_DATAFRAME not in st.session_state:
     st.session_state[CState.RESULT_DATAFRAME] = []
 
+st.caption("Use the below text area to enter your prompt. The prompt will be used to generate a SQL query. The query will be executed against Snowflake and the results will be displayed below.")
 
 prompt = st.text_area("Enter your prompt here", key=CState.CHAT_PROMPT)
 
@@ -45,11 +46,14 @@ if prompt:
 
     output = response["choices"][0]["text"]
 
-    df = snowflake.sql(output)
-
     st.session_state[CState.CHAT_GENERATED].append(output)
     st.session_state[CState.CHAT_PAST].append(prompt)
-    st.session_state[CState.RESULT_DATAFRAME].append(df)
+
+    try:
+        df = snowflake.sql(output)
+        st.session_state[CState.RESULT_DATAFRAME].append(df)
+    except Exception as e:
+        st.warning("Could not execute this SQL. It may need some manual tweaking.")
 
 if st.session_state[CState.CHAT_GENERATED]:
 
@@ -57,3 +61,4 @@ if st.session_state[CState.CHAT_GENERATED]:
         st.info(st.session_state[CState.CHAT_PAST][i])
         st.code(st.session_state[CState.CHAT_GENERATED][i], language="sql")
         st.dataframe(st.session_state[CState.RESULT_DATAFRAME][i])
+        st.divider()

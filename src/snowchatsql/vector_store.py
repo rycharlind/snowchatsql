@@ -20,6 +20,10 @@ class VectorStore():
         )
         documents = result['documents'][0]
         return documents
+    
+    def get_all_docs(self, collection_name: str):
+        collection = self.chroma_client.get_collection(name=collection_name)
+        return collection.get()['documents']
 
     # Saves a document for each table schema. 
     def persist_database_schema(self, database_name: str, tables: list, table_schemas: list) -> None:

@@ -1,0 +1,6 @@
+### Snowflake SQL tables, with their properties:
+#
+{database_schema}
+#
+###
+{prompt}

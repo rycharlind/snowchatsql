@@ -1,0 +1,5 @@
+What is the total number of impressions across all campaigns?
+What is the total cost per click across all campaigns?
+What is the total return on advertising spend across all campaigns?
+What is the total 14-day sales across all campaigns?
+What is the total 14-day conversion rate across all campaigns?

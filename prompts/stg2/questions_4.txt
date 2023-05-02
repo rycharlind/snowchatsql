@@ -1,0 +1,5 @@
+What is the total number of unique customers across all demographics?
+What is the total ordered revenue across all demographics?
+What is the most popular combination of products purchased together?
+What is the average household income of customers who purchase my products?
+What is the percentage of customers with a college education who purchase my products?

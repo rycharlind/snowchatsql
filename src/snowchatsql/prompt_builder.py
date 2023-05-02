@@ -5,8 +5,11 @@ class PromptBuilder():
 #
 {prompt_schema}
 #
-###
 {prompt}
+#
+Respond only in Snowflake SQL.
+If you don't know what value to use for a field, do your best to fill it in so that the SQL will execute properly.
+###
 """
 
     def build_from_schema(self, schema):
@@ -26,13 +29,7 @@ class PromptBuilder():
     
     def get_field_line(self, field) -> str:
         return f"{field['name']} ({field['type']})"
-    
-    def get_table_schema_str_list(self, tables: list) -> list:
-        return list(map(lambda table: self.get_table_schema_prompt(table), tables))
-    
-    def get_table_schema_final_prompt(self, table_schema_str_list: list) -> str:
-        out = "\n".join(list(map(lambda table_schema_str: table_schema_str, table_schema_str_list)))
-        return f"{out}"
+
     
     
 

@@ -1,0 +1,5 @@
+What is the total number of enrollments in Vine?
+What is the total amount of payments invoiced?
+What is the total amount of payments paid?
+What is the total number of products in the catalog?
+What is the total number of products with Sitb enabled?

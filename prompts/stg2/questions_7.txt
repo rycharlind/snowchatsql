@@ -1,0 +1,5 @@
+What is the total quantity of products sold across all transactions?
+What is the total net sales across all transactions?
+What is the total list price across all transactions?
+What is the total rebate in agreement currency across all transactions?
+What is the total cost variance across all transactions?
