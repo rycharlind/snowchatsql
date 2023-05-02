@@ -6,9 +6,24 @@ st.set_page_config(layout='wide')
 st.title('Welcome to SnowChatSQL!')
 st.snow()
 
-st.write("""
-SnowChatSQL is a tool that allows you to chat with your database using natural language. 
-It uses OpenAI's "text-davinci-003" model to generate SQL queries based on your input.
+st.markdown("""
+SnowChatSQL allows you to chat with your database using natural language. 
+It uses OpenAI's ***text-davinci-003*** model to generate SQL queries based on your input.
+""")
+         
+st.markdown("""
+This app is a POC on the ability to analyze any dataset that is stored in a Snowflake database using AI and natural language. 
+I used a free sample dataset from the Snowflake Marketplace on Amazon Vendor Analytics.
+
+Before running the app, you must first initialize the vector store with documents from the Snowflake database schema. 
+To do this, run the following command from the root directory of the project: `python src/init_vector_store.py`
+
+### Snowflake Sample Dataset: Amazon Vendor Analytics
+
+https://app.snowflake.com/marketplace/listing/GZTYZ3HT1R1/reason-automation-amazon-vendor-analytics-sample-dataset
+
+## Sample Prompts
+The below prompts we're generated using `python src/prompt_generator.py` and are based on the sample dataset.
 """)
          
 b1p = "What is the average revenue per customer?"
